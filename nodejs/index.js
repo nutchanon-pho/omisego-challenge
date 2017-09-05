@@ -5,22 +5,22 @@ let jsonObject = JSON.parse(inputString);
 let objectMapById = {};
 
 // Flatten it with map
-for(let key in jsonObject){
+for (let key in jsonObject) {
     let recordList = jsonObject[String(key)];
-    for(let eachRecord of recordList){
+    for (let eachRecord of recordList) {
         objectMapById[String(eachRecord.id)] = eachRecord;
     }
 }
 
 // Create relationship
 let outputList = [];
-for(let key in objectMapById){
+for (let key in objectMapById) {
     let record = objectMapById[String(key)];
-    if(record.parent_id){
+    if (record.parent_id) {
         let parentRecord = objectMapById[String(record.parent_id)];
-        
-        if(parentRecord){
-            if(!parentRecord.children){
+
+        if (parentRecord) {
+            if (!parentRecord.children) {
                 parentRecord.children = [];
             }
 
