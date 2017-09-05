@@ -17,7 +17,6 @@ defmodule OMISE do
     jsonObject = Poison.Parser.parse!(inputString)
 
     recordList = getRecordList(Map.values(jsonObject), [])
-    objectMapById = getObjectMapById(recordList, %{})
     IO.inspect Poison.encode!(getResultList(recordList, recordList, []))
   end
 
@@ -27,14 +26,6 @@ defmodule OMISE do
 
   def getRecordList([], list) do
     list
-  end
-
-  def getObjectMapById([head | tail], map) do
-    getObjectMapById(tail, Map.put(map, head["parent_id"], head))
-  end
-
-  def getObjectMapById([], map) do
-    map
   end
 
   def getChildrenWithThisParentId([head | tail], recordList, parent_id, list) do
