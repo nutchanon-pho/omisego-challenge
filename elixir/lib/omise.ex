@@ -7,7 +7,6 @@ defmodule OMISE do
     jsonObject = Poison.Parser.parse!(inputString)
 
     recordList = getRecordList(Map.values(jsonObject), [])
-    getResultList(recordList, recordList, [])
     IO.puts "\n"
     IO.puts "\n"
     IO.puts "Output Result:"
