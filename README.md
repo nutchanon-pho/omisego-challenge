@@ -26,8 +26,6 @@ Note #1: However, by simply type `node index.js`, the program will also use the 
 
 Note #2: Additionally, please be careful with the use of quotes for the input string of the command, because your string might not have escaped the quotes inside the JSON string.
 
-This is [on GitHub](https://github.com/jbt/markdown-editor) so let me know if I've b0rked it somewhere.
-
 
 ## Elixir
 Elixir implementation is done following the functional programming style of the programming language itself. Unlike the Node.js implementation, object referencing cannot be used to achieve the desired input. Therefore, the algorithm needed to change into:
